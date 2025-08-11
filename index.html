@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yinong Sheng - Systems Engineer & AI Infrastructure Specialist</title>
+    <meta name="description" content="Systems Engineer specializing in AI/ML infrastructure, computer vision, and hardware optimization. US Marine Corps veteran with expertise in distributed computing and enterprise systems.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #667eea;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .timeline-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline::before {
+                left: 0.5rem;
+            }
+
+            .timeline-item::before {
+                left: -1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Print styles for easy PDF conversion */
+        @media print {
+            body {
+                background: white !important;
+            }
+            
+            .section {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Yinong Sheng</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Systems Engineer & AI Infrastructure Specialist</h1>
+            <p>Bridging hardware expertise with cutting-edge AI/ML technologies. US Marine Corps veteran with a passion for solving complex technical challenges and optimizing distributed computing systems.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div>
+                        <div class="about-text">
+                            <p>Recent Computer Science graduate from UNCG with a unique blend of military discipline, hands-on technical expertise, and entrepreneurial experience. My journey from Marine Corps diesel mechanic to AI infrastructure specialist reflects my adaptability and passion for solving complex problems.</p>
+                            
+                            <p>I specialize in distributed computing, GPU optimization, and enterprise system administration. My experience ranges from deploying 235-billion parameter AI models to managing rental property operations, giving me both technical depth and business acumen.</p>
+
+                            <p><strong>Core Strengths:</strong></p>
+                            <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                                <li>Multi-GPU AI/ML pipeline optimization</li>
+                                <li>Enterprise storage and network administration</li>
+                                <li>Hardware consultation and custom builds</li>
+                                <li>Technical communication and vendor collaboration</li>
+                                <li>Bilingual communication (English/Chinese)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programming Languages</h4>
+                            <p>C++, Python, Java, JavaScript, SQL</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>AI/ML Technologies</h4>
+                            <p>ComfyUI, LM-Studio, PyTorch, Model Deployment, Distributed Computing</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Systems & Infrastructure</h4>
+                            <p>Linux, TrueNAS, Docker, Cloud Platforms, Network Administration</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Hardware & Optimization</h4>
+                            <p>GPU Configuration, Custom PC Building, Performance Tuning, Thermal Management</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Distributed AI Model Deployment</h3>
+                        <p>Architected cloud-based deployment for a 235-billion parameter mixture-of-experts model using containerized staging and shared network volumes. Achieved scalable inference with optimized memory utilization on runpod.io infrastructure.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Cloud Computing</span>
+                            <span class="tech-tag">Model Optimization</span>
+                            <span class="tech-tag">Distributed Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Multi-GPU ML Pipeline</h3>
+                        <p>Engineered dual-GPU configurations (RTX 5060ti x2, RTX 3090 x2 with NVLink) for AI inference workloads. Implemented memory optimization and layer splitting techniques, achieving 40% performance improvement in ComfyUI and LM-Studio workflows.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">CUDA</span>
+                            <span class="tech-tag">GPU Programming</span>
+                            <span class="tech-tag">Performance Optimization</span>
+                            <span class="tech-tag">ML Infrastructure</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Enterprise NAS Administration</h3>
+                        <p>Administered TrueNAS system with 99.9% uptime, including disaster recovery implementation during critical RAM failure. Performed component-level diagnostics, data recovery, and system restoration in production environment.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">TrueNAS</span>
+                            <span class="tech-tag">ZFS</span>
+                            <span class="tech-tag">Disaster Recovery</span>
+                            <span class="tech-tag">Network Storage</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>LLM Context Enhancement System</h3>
+                        <p>Developed web application for real-time LLM response enhancement using local inference for prompt preprocessing. Created interface for text and image resource integration to improve model responses without direct fine-tuning.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Natural Language Processing</span>
+                            <span class="tech-tag">Web Development</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Custom Hardware Solutions</h3>
+                        <p>Designed and built 5+ custom computing systems for gaming and content creation. Provided client consultation, performance optimization, and cost-effective solutions ranging from $1,500-$4,000 budget constraints.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Hardware Design</span>
+                            <span class="tech-tag">Client Consultation</span>
+                            <span class="tech-tag">Cost Optimization</span>
+                            <span class="tech-tag">Performance Tuning</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Enterprise Hardware Restoration</h3>
+                        <p>Refurbished enterprise-grade Dell OEM RTX 3090 GPUs with complete disassembly, cleaning, and thermal paste replacement. Implemented quality validation protocols achieving 100% functionality restoration rate.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Hardware Repair</span>
+                            <span class="tech-tag">Thermal Management</span>
+                            <span class="tech-tag">Quality Assurance</span>
+                            <span class="tech-tag">Cost Reduction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Systems Consultant & Technical Specialist</h3>
+                        <div class="date">2024 - Present</div>
+                        <p>Providing technical consulting services specializing in AI/ML infrastructure, custom hardware solutions, and enterprise system administration. Collaborated with major software vendors on critical bug identification and resolution.</p>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                            <li>Engineered distributed GPU computing infrastructure with 40% performance improvement</li>
+                            <li>Provided technical analysis to Topaz Labs and ASUS engineering teams</li>
+                            <li>Administered enterprise NAS systems with 99.9% uptime</li>
+                            <li>Delivered custom hardware solutions for 5+ clients</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Property Manager - L&S Realty, LLC</h3>
+                        <div class="date">April 2021 - Present</div>
+                        <p>Managed portfolio of 5 rental properties with full operational responsibility including tenant relations, maintenance coordination, and financial operations.</p>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                            <li>Implemented digital systems for accounting and maintenance tracking</li>
+                            <li>Performed electrical and plumbing repairs, reducing contractor costs by 60%</li>
+                            <li>Maintained 95% occupancy rate through effective tenant relations</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Diesel Mechanic & Range Coach - United States Marine Corps</h3>
+                        <div class="date">2017 - 2021</div>
+                        <p>Maintained and repaired heavy equipment in demanding operational environments. Served as certified range coach training personnel in weapons systems and safety protocols.</p>
+                        <ul style="margin-top: 1rem; margin-left: 1.5rem;">
+                            <li>Achieved Corporal rank through leadership and technical expertise</li>
+                            <li>Maintained 98% equipment readiness rate in challenging conditions</li>
+                            <li>Trained 200+ personnel in safety protocols and technical procedures</li>
+                            <li>Eligible for security clearance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;">📧</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:shengyinong@gmail.com" style="color: #667eea; text-decoration: none;">shengyinong@gmail.com</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;">💼</div>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://linkedin.com/in/yinongsheng-323b6577" target="_blank" style="color: #667eea; text-decoration: none;">View Profile</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;">📍</div>
+                        <h3>Location</h3>
+                        <p>Charlotte, NC<br>Open to relocation</p>
+                    </div>
+                    <div class="contact-card">
+                        <div style="font-size: 2rem; color: #667eea; margin-bottom: 1rem;">🎯</div>
+                        <h3>Availability</h3>
+                        <p>Available for full-time opportunities<br>Contract work considered</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); text-align: center; padding: 2rem 0; margin-top: 2rem; color: white;">
+        <div class="container">
+            <p>&copy; 2025 Yinong Sheng. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">US Marine Corps Veteran | Security Clearance Eligible | Bilingual (English/Chinese)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple analytics tracking (you can replace with Google Analytics)
+        function trackVisit(section) {
+            console.log(`Visited section: ${section}`);
+            // You can send this data to your analytics service
+        }
+
+        // Track section views
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    trackVisit(entry.target.id);
+                }
+            });
+        });
+
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
